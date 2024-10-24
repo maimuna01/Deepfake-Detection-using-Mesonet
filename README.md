@@ -34,15 +34,12 @@ You can find the pretrained weight in the `weights` folder. The `_DF` extension 
 
 ## How to Run
 1. Clone the Repository
-bash
-Copy code
+```bash
 git clone https://github.com/yourusername/deepfake-detection.git
 cd deepfake-detection
+```
 2. Download and Prepare the Dataset
-Place your training and validation datasets into the /data directory with the following structure:
-
-bash
-Copy code
+```bash
 /data
   /train
     /real
@@ -50,29 +47,23 @@ Copy code
   /validation
     /real
     /forged
-3. Train the Model
-To train the model using the MesoNet architecture:
+```
 
-bash
-Copy code
+3. Train the Model
+```bash
 python train.py --epochs 50 --batch_size 32
-This command trains the model for 50 epochs with a batch size of 32. You can adjust these parameters based on your setup.
+```
 
 4. Validate the Model
-To evaluate the trained model’s performance on the validation set:
-
-bash
+```bash
 Copy code
 python validate.py --model mesonet_model.h5 --data_dir ./data/validation
-This will output metrics like accuracy, precision, recall, and F1-score.
+```
 
 5. Run Inference on New Data
-To detect deepfakes in a new image:
-
-bash
-Copy code
+```bash
 python predict.py --image_path ./path_to_image.jpg --model mesonet_model.h5
-This command will return whether the image is real or a deepfake.
+```
 
 ## Purpose:
 The primary goal of this project is to develop a robust detection framework that identifies deepfake images with high accuracy. By training the model on a diverse dataset, the system is validated for real-world deployment, providing a critical tool for cybersecurity and digital forensics.

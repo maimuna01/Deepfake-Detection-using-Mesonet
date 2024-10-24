@@ -35,8 +35,8 @@ You can find the pretrained weight in the `weights` folder. The `_DF` extension 
 ## How to Run
 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/deepfake-detection.git
-cd deepfake-detection
+git clone https://github.com/Deepfake-Detection-using-Mesonet.git
+cd Deepfake-Detection-using-Mesonet
 ```
 2. Download and Prepare the Dataset
 ```bash
@@ -56,7 +56,6 @@ python train.py --epochs 50 --batch_size 32
 
 4. Validate the Model
 ```bash
-Copy code
 python validate.py --model mesonet_model.h5 --data_dir ./data/validation
 ```
 

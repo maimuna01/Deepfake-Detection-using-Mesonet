@@ -26,7 +26,3 @@ The primary goal of this project is to develop a robust detection framework that
 ## Key Features:
 - **MesoNet Architecture**: A compact Convolutional Neural Network (CNN) architecture designed for detecting facial forgeries with precision.
 - **Cybersecurity Application**: The system enhances the integrity of digital media by identifying manipulated content, safeguarding against threats like misinformation, identity theft, and fraud.
-  
----
-
-This version aligns with your project's technical focus while incorporating details from your report on dataset distribution, model design, and its relevance to cybersecurity.

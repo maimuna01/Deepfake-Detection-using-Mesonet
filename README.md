@@ -22,6 +22,7 @@ This project focuses on detecting deepfakes in images using the MesoNet network 
 ### Validation Set:
 - **Forged Images**: 2,889
 - **Real Images**: 4,259
+
 [Download link for the dataset](https://my.pcloud.com/publink/show?code=XZLGvd7ZI9LjgIy7iOLzXBG5RNJzGFQzhTRy)
 
 ### Balance:
@@ -30,6 +31,48 @@ This project focuses on detecting deepfakes in images using the MesoNet network 
 ## Pretrained models
 
 You can find the pretrained weight in the `weights` folder. The `_DF` extension correspond to a model trained to classify deepfake-generated images and the `_F2F` to Face2Face-generated images.
+
+## How to Run
+1. Clone the Repository
+bash
+Copy code
+git clone https://github.com/yourusername/deepfake-detection.git
+cd deepfake-detection
+2. Download and Prepare the Dataset
+Place your training and validation datasets into the /data directory with the following structure:
+
+bash
+Copy code
+/data
+  /train
+    /real
+    /forged
+  /validation
+    /real
+    /forged
+3. Train the Model
+To train the model using the MesoNet architecture:
+
+bash
+Copy code
+python train.py --epochs 50 --batch_size 32
+This command trains the model for 50 epochs with a batch size of 32. You can adjust these parameters based on your setup.
+
+4. Validate the Model
+To evaluate the trained model’s performance on the validation set:
+
+bash
+Copy code
+python validate.py --model mesonet_model.h5 --data_dir ./data/validation
+This will output metrics like accuracy, precision, recall, and F1-score.
+
+5. Run Inference on New Data
+To detect deepfakes in a new image:
+
+bash
+Copy code
+python predict.py --image_path ./path_to_image.jpg --model mesonet_model.h5
+This command will return whether the image is real or a deepfake.
 
 ## Purpose:
 The primary goal of this project is to develop a robust detection framework that identifies deepfake images with high accuracy. By training the model on a diverse dataset, the system is validated for real-world deployment, providing a critical tool for cybersecurity and digital forensics.
